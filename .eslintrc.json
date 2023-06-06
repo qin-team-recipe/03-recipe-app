@@ -1,0 +1,116 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "tsconfigRootDir": ".",
+    "project": ["./tsconfig.json"],
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "jsx-a11y",
+    "react",
+    "react-hooks",
+    "unused-imports"
+  ],
+  "rules": {
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "return"
+      }
+    ],
+    "@typescript-eslint/consistent-type-definitions": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": false
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "import/extensions": [
+      "error",
+      {
+        "ignorePackages": true,
+        "pattern": {
+          "js": "never",
+          "jsx": "never",
+          "ts": "never",
+          "tsx": "never",
+          "json": "always"
+        }
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "object",
+          "index"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "{next/**}",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "{react}",
+            "group": "builtin",
+            "position": "before"
+          },
+          {
+            "pattern": "@/**",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
+        "newlines-between": "always",
+        "pathGroupsExcludedImportTypes": ["builtin"],
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ],
+    "unused-imports/no-unused-imports": "error",
+    "react/display-name": "off",
+    "no-console": [
+      2,
+      {
+        "allow": ["warn", "error"]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "react/prop-types": "off"
+      }
+    }
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
