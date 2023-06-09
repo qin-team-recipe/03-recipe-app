@@ -1,23 +1,17 @@
 import { RecipeStepItem } from '@/app/_components/recipe-step-item';
 
-export default function Detail() {
+export default function Resipe() {
   return (
     <main>
-      <div>料理画像</div>
-      <div>料理タイトル</div>
-      <div>料理説明</div>
-      <div>お気に入り</div>
-      <div>作り方・材料タブ</div>
-      <ul>
-        {recipeItems.map((item, i) => (
-          <RecipeStepItem
-            key={i}
-            text={item.text}
-            annotation={item.annotation}
-            isLast={recipeItems.length - 1 === i}
-          />
-        ))}
-      </ul>
+      {recipeItems.map((item, i) => (
+        <RecipeStepItem
+          key={i}
+          index={i + 1}
+          text={item.text}
+          annotation={item.annotation}
+          isLast={recipeItems.length - 1 === i}
+        />
+      ))}
     </main>
   );
 }
