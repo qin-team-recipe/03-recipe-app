@@ -1,4 +1,4 @@
-import { Tabs } from '@/app/_components/tabs';
+import { RecipeTabs } from '@/app/_components/recipe-tabs';
 
 export const metadata = {
   title: 'レシピ詳細',
@@ -12,7 +12,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <div>料理タイトル</div>
       <div>料理説明</div>
       <div>お気に入り</div>
-      <Tabs />
+      <RecipeTabs />
       {children}
     </main>
   );

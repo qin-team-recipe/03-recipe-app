@@ -13,8 +13,8 @@ export const RecipeStepItem: FC<Props> = ({ index, text, annotation }) => (
       {index}
     </div>
     <div className='flex-col'>
-      <p className='text-base'>{text}</p>
-      <p className='text-sm text-gray-500'>{annotation}</p>
+      <p className='text-sm'>{text}</p>
+      <p className='text-xs text-gray-500'>{annotation}</p>
     </div>
   </div>
 );

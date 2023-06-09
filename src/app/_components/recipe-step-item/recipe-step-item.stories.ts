@@ -5,6 +5,7 @@ import { RecipeStepItem } from './index';
 const meta: Meta<typeof RecipeStepItem> = {
   title: 'Recipe/RecipeStepItem',
   component: RecipeStepItem,
+  tags: ['autodocs'],
 };
 
 export default meta;
