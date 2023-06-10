@@ -5,7 +5,7 @@ const recipeStepItem = tv({
   slots: {
     base: 'flex gap-2 border-b border-[#DCDBDD] px-2 py-4',
     circleNum:
-      'h-5 w-5 min-w-[1.25rem] rounded-full bg-[#CA3214] text-center text-sm text-[#fff]',
+      'h-5 w-5 min-w-[1.25rem] rounded-full bg-[#CA3214] text-center text-sm text-white',
     description: 'flex-col',
     textStyle: 'text-sm text-[#1A1523]',
     annotationStyle: 'text-xs text-[#86848D]',

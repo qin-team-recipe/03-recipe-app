@@ -5,13 +5,13 @@ import { RecipeTabs } from '@/app/_components/recipe-tabs';
 
 const recipeTab = tv({
   slots: {
-    main: 'm-auto max-w-[400px]',
-    imageArea: 'h-[400px] w-[400px] bg-red-200',
-    back: 'absolute left-[20px] top-[20px] h-[32px] w-[32px]',
-    backIcon: 'h-[32px] w-[32px] text-[#fff]',
-    fav: 'absolute bottom-0 left-[320px] top-[340px] h-[60px] w-[60px] rounded-full bg-[#908E96]',
-    favArea: 'absolute left-[12px] top-[14px] h-[36px] w-[36px]',
-    favIcon: 'h-[36px] w-[36px] text-[#fff]',
+    main: 'm-auto max-w-[400px]', // TODO: ここでmax-wを指定せずサイドバーと合わせて指定した方がよさそう
+    imageArea: 'aspect-square bg-red-200',
+    back: 'absolute left-5 top-5 h-8 w-8',
+    backIcon: 'h-8 w-8 text-white',
+    fav: 'absolute bottom-0 right-0 m-2 h-[3.75rem] w-[3.75rem] rounded-full bg-[#908E96]',
+    favArea: 'absolute left-3 top-[0.875rem] h-8 w-8',
+    favIcon: 'h-9 w-9 text-white',
     recipeName: 'm-4 text-[28px] font-bold',
   },
 });
