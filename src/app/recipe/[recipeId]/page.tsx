@@ -1,3 +1,4 @@
+import { CopyButton } from '@/app/_components/copy-button';
 import { RecipeStepItem } from '@/app/_components/recipe-step-item';
 
 export default function Resipe() {
@@ -12,6 +13,9 @@ export default function Resipe() {
           isLast={recipeItems.length - 1 === i}
         />
       ))}
+      <div className='m-2 flex justify-end'>
+        <CopyButton recipeItems={recipeItems} />
+      </div>
     </main>
   );
 }
