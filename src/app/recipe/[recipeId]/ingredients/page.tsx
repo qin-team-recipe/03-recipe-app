@@ -1,4 +1,4 @@
-export default function Resipe() {
+export default function Ingredients() {
   return (
     <main>
       <p>材料</p>

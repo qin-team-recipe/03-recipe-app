@@ -1,7 +1,7 @@
 import { CopyButton } from '@/app/_components/copy-button';
 import { RecipeStepItem } from '@/app/_components/recipe-step-item';
 
-export default function Resipe() {
+export default function Recipe() {
   return (
     <main>
       {recipeItems.map((item, i) => (
