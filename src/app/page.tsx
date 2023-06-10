@@ -34,7 +34,7 @@ export default function Home() {
     <main className={main()}>
       <div className={content()}>
         <h1>レシピアプリ</h1>
-        <Sample />
+        <Sample text='sample' />
       </div>
       <NavBar />
     </main>
