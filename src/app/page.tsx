@@ -3,6 +3,7 @@ import { tv } from 'tailwind-variants';
 import { NavBar } from '@/app/_components/navBar';
 import { Sample } from '@/app/_components/sample';
 
+// eslint-disable-next-line tailwindcss/no-custom-classname
 const home = tv(
   {
     slots: {

@@ -6,11 +6,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
-    "prettier": "prettier --check --write \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint": "eslint --max-warnings 0",
+    "lint:all": "eslint \"src/**/*.{ts,tsx}\" --max-warnings 0",
+    "lint:fix": "eslint --fix --max-warnings 0",
+    "lint:fix:all": "eslint --fix \"src/**/*.{ts,tsx}\" --max-warnings 0",
+    "format": "prettier --write",
+    "format:all": "prettier --write \"src/**/*.{ts,tsx}\"",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@types/node": "20.2.5",
@@ -42,6 +52,8 @@
     "eslint-plugin-storybook": "^0.6.12",
     "eslint-plugin-tailwindcss": "^3.12.1",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
     "storybook": "7.0.18"
   }
