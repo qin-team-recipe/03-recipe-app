@@ -1,6 +1,23 @@
 import { MdFavoriteBorder, MdArrowBack } from 'react-icons/md';
+import { tv } from 'tailwind-variants';
 
 import { RecipeTabs } from '@/app/_components/recipe-tabs';
+
+const recipeTab = tv({
+  slots: {
+    main: 'max-w-[400px] m-auto',
+    imageArea: 'h-[400px] w-[400px] bg-red-200',
+    back: 'w-[32px] h-[32px] absolute top-[20px] left-[20px]',
+    backIcon: 'w-[32px] h-[32px] text-[#fff]',
+    fav: 'w-[60px] h-[60px] absolute bottom-0 top-[340px] left-[320px] bg-[#908E96] rounded-full',
+    favArea: 'w-[36px] h-[36px] absolute top-[14px] left-[12px]',
+    favIcon: 'w-[36px] h-[36px] text-[#fff]',
+    recipeName: 'font-bold text-[28px] m-4',
+  },
+});
+
+const { main, imageArea, back, backIcon, fav, favArea, favIcon, recipeName } =
+  recipeTab();
 
 export const metadata = {
   title: 'レシピ詳細',
@@ -10,23 +27,23 @@ export const metadata = {
 export default function Layout({ children }: { children: React.ReactNode }) {
   // TODO: レシピ詳細取得
   return (
-    <main className='max-w-[400px] m-auto'>
+    <main className={main()}>
       {/* 料理画像 */}
       <div className='relative'>
-        <div className='h-[400px] w-[400px] bg-red-200' />
-        <div className='w-[32px] h-[32px] absolute top-[20px] left-[20px]'>
-          <MdArrowBack className='w-[32px] h-[32px] text-[#fff]' />
+        <div className={imageArea()} />
+        <div className={back()}>
+          <MdArrowBack className={backIcon()} />
         </div>
-        <div className='w-[60px] h-[60px] absolute bottom-0 top-[340px] left-[320px] bg-[#908E96] rounded-full'>
-          <div className='w-[36px] h-[36px] absolute top-[14px] left-[12px]'>
+        <div className={fav()}>
+          <div className={favArea()}>
             {/* TODO: Favo/Unfavoの切り替え */}
-            <MdFavoriteBorder className='w-[36px] h-[36px] text-[#fff]' />
+            <MdFavoriteBorder className={favIcon()} />
           </div>
         </div>
       </div>
       {/* 料理名、説明文 */}
       <div>
-        <p className='font-bold text-[28px] m-4'>グラタン</p>
+        <p className={recipeName()}>グラタン</p>
         <p className='m-4'>
           はじめてでも失敗なく作れるような、鶏肉や玉ねぎを具とした基本的なマカロニグラタンのレシピです。
           ソースと具材炒めを別器具で行うレシピも多いですが、グラタンの具を炒めたフライパンの中で、そのままホワイトソースを仕上げる手軽な作り方にしています。ぜひお試しください。

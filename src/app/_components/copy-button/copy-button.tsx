@@ -1,6 +1,15 @@
 'use client';
 import { FC } from 'react';
 import { FiCopy } from 'react-icons/fi';
+import { tv } from 'tailwind-variants';
+
+const copyButton = tv({
+  slots: {
+    button: 'flex items-center gap-[2px] text-[#0066DB] text-xs',
+  },
+});
+
+const { button } = copyButton();
 
 type RecipeItem = {
   text: string;
@@ -22,7 +31,7 @@ export const CopyButton: FC<Props> = ({ recipeItems }) => {
 
   return (
     <button onClick={saveToClipboard}>
-      <div className='flex items-center gap-[2px] text-[#0066DB] text-xs'>
+      <div className={button()}>
         <FiCopy />
         <p>コピーする</p>
       </div>
