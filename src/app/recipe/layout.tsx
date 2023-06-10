@@ -1,3 +1,5 @@
+import { MdFavoriteBorder, MdArrowBack } from 'react-icons/md';
+
 import { RecipeTabs } from '@/app/_components/recipe-tabs';
 
 export const metadata = {
@@ -7,11 +9,32 @@ export const metadata = {
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <main>
-      <div>料理画像</div>
-      <div>料理タイトル</div>
-      <div>料理説明</div>
-      <div>お気に入り</div>
+    <main className='max-w-[400px] m-auto'>
+      {/* 料理画像 */}
+      <div className='relative'>
+        <div className='h-[400px] w-[400px] bg-red-200' />
+        <div className='w-[32px] h-[32px] absolute top-[20px] left-[20px]'>
+          <MdArrowBack className='w-[32px] h-[32px] text-[#fff]' />
+        </div>
+        <div className='w-[60px] h-[60px] absolute bottom-0 top-[340px] left-[320px] bg-[#908E96] rounded-full'>
+          <div className='w-[36px] h-[36px] absolute top-[14px] left-[12px]'>
+            <MdFavoriteBorder className='w-[36px] h-[36px] text-[#fff]' />
+          </div>
+        </div>
+      </div>
+      {/* 料理名、説明文 */}
+      <div>
+        <p className='font-bold text-[28px] m-4'>グラタン</p>
+        <p className='m-4'>
+          はじめてでも失敗なく作れるような、鶏肉や玉ねぎを具とした基本的なマカロニグラタンのレシピです。
+          ソースと具材炒めを別器具で行うレシピも多いですが、グラタンの具を炒めたフライパンの中で、そのままホワイトソースを仕上げる手軽な作り方にしています。ぜひお試しください。
+        </p>
+        {/* お気に入り */}
+        <div className='flex gap-2 m-4'>
+          <p className='font-bold'>789</p>
+          <p className='text-[#6F6E77]'>お気に入り</p>
+        </div>
+      </div>
       <RecipeTabs />
       {children}
     </main>
