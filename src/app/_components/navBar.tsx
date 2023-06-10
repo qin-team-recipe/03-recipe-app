@@ -21,21 +21,21 @@ const navBar = tv(
   {
     slots: {
       navContainer:
-        'w-full pt-2 bg-[#FDFCFD] absolute bottom-0 h-[5.25rem] shadow-top',
+        'absolute bottom-0 h-[5.25rem] w-full bg-[#FDFCFD] pt-2 shadow-top',
       chefContainer: 'invisible h-0',
       chefText: 'text-2xl font-bold',
       buttonContainer: 'flex',
-      icon: 'h-12 flex flex-col items-center flex-1 gap-y-1',
+      icon: 'flex h-12 flex-1 flex-col items-center gap-y-1',
       label: 'text-[0.625rem]',
     },
     variants: {
       size: {
         large: {
           navContainer:
-            'w-60 pt-5 flex flex-col gap-y-10 order-1 shadow-none static h-auto',
-          chefContainer: 'visible h-5 flex items-center gap-x-3',
+            'static order-1 flex h-auto w-60 flex-col gap-y-10 pt-5 shadow-none',
+          chefContainer: 'visible flex h-5 items-center gap-x-3',
           buttonContainer: 'flex-col gap-y-6',
-          icon: 'flex-row gap-y-0 gap-x-3',
+          icon: 'flex-row gap-x-3 gap-y-0',
           label: 'text-2xl',
         },
       },

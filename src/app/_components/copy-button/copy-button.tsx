@@ -5,7 +5,7 @@ import { tv } from 'tailwind-variants';
 
 const copyButton = tv({
   slots: {
-    button: 'flex items-center gap-[2px] text-[#0066DB] text-xs',
+    button: 'flex items-center gap-[2px] text-xs text-[#0066DB]',
   },
 });
 

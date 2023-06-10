@@ -5,14 +5,14 @@ import { RecipeTabs } from '@/app/_components/recipe-tabs';
 
 const recipeTab = tv({
   slots: {
-    main: 'max-w-[400px] m-auto',
+    main: 'm-auto max-w-[400px]',
     imageArea: 'h-[400px] w-[400px] bg-red-200',
-    back: 'w-[32px] h-[32px] absolute top-[20px] left-[20px]',
-    backIcon: 'w-[32px] h-[32px] text-[#fff]',
-    fav: 'w-[60px] h-[60px] absolute bottom-0 top-[340px] left-[320px] bg-[#908E96] rounded-full',
-    favArea: 'w-[36px] h-[36px] absolute top-[14px] left-[12px]',
-    favIcon: 'w-[36px] h-[36px] text-[#fff]',
-    recipeName: 'font-bold text-[28px] m-4',
+    back: 'absolute left-[20px] top-[20px] h-[32px] w-[32px]',
+    backIcon: 'h-[32px] w-[32px] text-[#fff]',
+    fav: 'absolute bottom-0 left-[320px] top-[340px] h-[60px] w-[60px] rounded-full bg-[#908E96]',
+    favArea: 'absolute left-[12px] top-[14px] h-[36px] w-[36px]',
+    favIcon: 'h-[36px] w-[36px] text-[#fff]',
+    recipeName: 'm-4 text-[28px] font-bold',
   },
 });
 
@@ -49,7 +49,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           ソースと具材炒めを別器具で行うレシピも多いですが、グラタンの具を炒めたフライパンの中で、そのままホワイトソースを仕上げる手軽な作り方にしています。ぜひお試しください。
         </p>
         {/* お気に入り */}
-        <div className='flex gap-2 m-4'>
+        <div className='m-4 flex gap-2'>
           <p className='font-bold'>789</p>
           <p className='text-[#6F6E77]'>お気に入り</p>
         </div>

@@ -7,9 +7,9 @@ import { tv } from 'tailwind-variants';
 const recipeTab = tv({
   slots: {
     nav: 'text-center',
-    link: 'w-6/12 inline-block p-2 border-b',
+    link: 'inline-block w-6/12 border-b p-2',
     text: 'text-[#1A1523]',
-    active: 'font-semibold border-b-2 border-[#1A1523]',
+    active: 'border-b-2 border-[#1A1523] font-semibold',
   },
 });
 
