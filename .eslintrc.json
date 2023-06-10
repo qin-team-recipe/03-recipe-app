@@ -4,6 +4,7 @@
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:storybook/recommended",
+    "plugin:tailwindcss/recommended",
     "prettier"
   ],
   "parserOptions": {
@@ -17,7 +18,8 @@
     "jsx-a11y",
     "react",
     "react-hooks",
-    "unused-imports"
+    "unused-imports",
+    "tailwindcss"
   ],
   "rules": {
     "padding-line-between-statements": [
