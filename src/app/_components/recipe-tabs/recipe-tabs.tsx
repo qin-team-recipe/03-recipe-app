@@ -27,18 +27,18 @@ export const RecipeTabsTemplate: FC<Props> = ({ recipeId, isIngredients }) => {
       <Link
         href={`/recipe/${recipeId}`}
         className={`w-6/12 inline-block p-2 border-b ${
-          !isIngredients ? 'font-semibold border-b-2 border-black' : ''
+          !isIngredients ? 'font-semibold border-b-2 border-[#1A1523]' : ''
         }`}
       >
-        <div>作り方</div>
+        <div className='text-[#1A1523]'>作り方</div>
       </Link>
       <Link
         href={`/recipe/${recipeId}/ingredients`}
         className={`w-6/12 inline-block p-2 border-b ${
-          isIngredients ? 'font-semibold border-b-2 border-black' : ''
+          isIngredients ? 'font-semibold border-b-2 border-[#1A1523]' : ''
         }`}
       >
-        <div>材料</div>
+        <div className='text-[#1A1523]'>材料</div>
       </Link>
     </nav>
   );
