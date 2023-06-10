@@ -17,6 +17,7 @@ type NavBarItem = {
   path: string;
 };
 
+// eslint-disable-next-line tailwindcss/no-custom-classname
 const navBar = tv(
   {
     slots: {
