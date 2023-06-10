@@ -8,6 +8,7 @@ export const metadata = {
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {
+  // TODO: レシピ詳細取得
   return (
     <main className='max-w-[400px] m-auto'>
       {/* 料理画像 */}
@@ -18,6 +19,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
         <div className='w-[60px] h-[60px] absolute bottom-0 top-[340px] left-[320px] bg-[#908E96] rounded-full'>
           <div className='w-[36px] h-[36px] absolute top-[14px] left-[12px]'>
+            {/* TODO: Favo/Unfavoの切り替え */}
             <MdFavoriteBorder className='w-[36px] h-[36px] text-[#fff]' />
           </div>
         </div>
