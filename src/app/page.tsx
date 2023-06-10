@@ -3,6 +3,7 @@ import { tv } from 'tailwind-variants';
 import { NavBar } from '@/app/_components/navBar';
 import { Sample } from '@/app/_components/sample';
 
+// eslint-disable-next-line tailwindcss/no-custom-classname
 const home = tv(
   {
     slots: {
@@ -12,7 +13,7 @@ const home = tv(
     variants: {
       size: {
         large: {
-          main: 'flex w-8/12 mx-auto gap-x-4',
+          main: 'mx-auto flex w-8/12 gap-x-4',
           content: 'order-2',
         },
       },

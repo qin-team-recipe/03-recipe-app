@@ -24,8 +24,7 @@ export const useGetWindowSize = () => {
     } else {
       return;
     }
-
   }, []);
-  
+
   return windowSize;
 };
