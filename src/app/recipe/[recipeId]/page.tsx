@@ -10,7 +10,6 @@ export default function Recipe() {
           index={i + 1}
           text={item.text}
           annotation={item.annotation}
-          isLast={recipeItems.length - 1 === i}
         />
       ))}
       <div className='m-2 flex justify-end'>

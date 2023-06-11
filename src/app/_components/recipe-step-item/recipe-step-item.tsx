@@ -19,7 +19,6 @@ type Props = {
   index: number;
   text: string;
   annotation: string;
-  isLast?: boolean;
 };
 
 export const RecipeStepItem: FC<Props> = ({ index, text, annotation }) => (
