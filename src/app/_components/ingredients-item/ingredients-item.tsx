@@ -8,10 +8,13 @@ const ingredientsItem = tv({
     description: 'flex-col gap-1',
     textStyle: 'text-sm text-[#1A1523]',
     annotationStyle: 'text-xs text-[#86848D]',
+    button: 'flex items-center justify-center',
+    icon: 'h-5 w-5 text-[#6F6E77]',
   },
 });
 
-const { base, description, textStyle, annotationStyle } = ingredientsItem();
+const { base, description, textStyle, annotationStyle, button, icon } =
+  ingredientsItem();
 
 type Props = {
   text: string;
@@ -30,8 +33,8 @@ export const IngredientsItem: FC<Props> = ({
       <p className={annotationStyle()}>{annotation}</p>
     </div>
     {/* TODO: お買い物リストに追加処理 */}
-    <button className='flex items-center justify-center'>
-      <TbShoppingCartPlus className='h-5 w-5 text-[#6F6E77]' />
+    <button className={button()}>
+      <TbShoppingCartPlus className={icon()} />
     </button>
   </div>
 );
