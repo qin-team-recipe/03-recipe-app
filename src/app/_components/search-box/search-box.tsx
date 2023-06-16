@@ -6,7 +6,7 @@ import {
   useRouter,
   useSearchParams,
 } from 'next/navigation';
-import { FC, FormEvent, useState } from 'react';
+import { ChangeEvent, FC, useEffect, useState, useTransition } from 'react';
 import { RxCross2 } from 'react-icons/rx';
 
 const createUrl = (
@@ -23,48 +23,50 @@ export const SearchBox: FC = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const path = usePathname();
+  const [isPending, startTransition] = useTransition();
   const [text, setText] = useState('');
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const newParams = new URLSearchParams(searchParams.toString());
 
-    const value = e.target as HTMLFormElement;
-    const search = value.search as HTMLInputElement;
-    setText(search.value);
-    const newParams = new URLSearchParams(searchParams.toString());
-
-    if (search.value) {
-      newParams.set('q', search.value);
+  useEffect(() => {
+    if (text !== '') {
+      newParams.set('q', text);
     } else {
       newParams.delete('q');
     }
-
     router.push(createUrl(path, newParams));
+  }, [text]);
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setText(e.target.value);
+    startTransition(async () => {
+      await new Promise((resolve) => {
+        setTimeout(resolve, 2000);
+      });
+    });
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
+    <div
       className='flex h-full flex-1 items-center rounded-lg bg-[#EEEDEF]
-        pl-4 pr-1 focus-within:ring-2 focus-within:ring-inset focus-within:ring-gray-300'
+        pl-4 pr-3 focus-within:ring-2 focus-within:ring-inset focus-within:ring-gray-300'
     >
       <input
         type='text'
         name='search'
-        className='flex-1 bg-[#EEEDEF] font-bold outline-none '
+        className='flex-1 bg-[#EEEDEF] pr-3 font-bold outline-none '
         placeholder='シェフやレシピを検索'
         autoComplete='off'
-        onChange={(e) => setText(e.target.value)}
-        // value={text}
+        onChange={handleChange}
+        value={text}
       />
-      {text !== '' && (
-        <button
-          onClick={() => setText('')}
-          className='grid w-8 place-items-center'
-        >
+      {isPending ? (
+        <div className='h-5 w-5 animate-spin rounded-full border-2 border-black border-t-transparent' />
+      ) : text !== '' ? (
+        <button onClick={() => setText('')} className='w-5'>
           <RxCross2 size='1.25rem' />
         </button>
-      )}
-    </form>
+      ) : null}
+    </div>
   );
 };
