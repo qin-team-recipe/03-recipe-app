@@ -9,10 +9,6 @@ type Props = {
 
 const tabs = [
   {
-    path: `/search`,
-    tabText: 'すべて',
-  },
-  {
     path: `/search/chef`,
     tabText: 'シェフ',
   },
