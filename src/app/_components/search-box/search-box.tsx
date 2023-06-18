@@ -34,14 +34,20 @@ export const SearchBox: FC = () => {
     } else {
       newParams.delete('q');
     }
-    router.push(createUrl(path, newParams));
+    const timeoutId = setTimeout(() => {
+      router.push(createUrl(path, newParams));
+    }, 1000);
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, [text]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
     startTransition(async () => {
       await new Promise((resolve) => {
-        setTimeout(resolve, 2000);
+        setTimeout(resolve, 1000);
       });
     });
   };
