@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants';
 
-import { ActionButton } from '@/app/_components/action-button/action-button';
-import { RecipeDetail } from '@/app/_components/recipe-detail/recipe-detail';
+import { ActionButton } from '@/app/_components/action-button';
+import { RecipeDetail } from '@/app/_components/recipe-detail';
 import { Tabs } from '@/app/_components/tabs';
 
 export const metadata = {
