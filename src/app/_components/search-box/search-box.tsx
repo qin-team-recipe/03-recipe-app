@@ -1,5 +1,3 @@
-'use client';
-
 import Link from 'next/link';
 import { FC } from 'react';
 import { BiArrowBack } from 'react-icons/bi';
@@ -18,9 +16,13 @@ const tabs = [
   },
 ];
 
-export const SearchBox: FC = () => {
+type Props = {
+  q: string;
+};
+
+export const SearchBox: FC<Props> = ({ q = '' }) => {
   return (
-    <>
+    <div className='w-full'>
       <div className='mb-2 flex h-9 items-center gap-x-4 px-4'>
         <Link href='/'>
           <BiArrowBack size='1.25rem' color='#6F6E77' />
@@ -28,7 +30,9 @@ export const SearchBox: FC = () => {
         <SearchInput />
       </div>
       <Tabs tabs={tabs} />
-      <p className='gap-0 px-4 pt-5 text-xl font-bold'>話題のレシピ</p>
-    </>
+      <p className='gap-0 px-4 pt-5 text-xl font-bold'>
+        {q === '' ? '話題のレシピ' : `「${q}」で検索`}
+      </p>
+    </div>
   );
 };

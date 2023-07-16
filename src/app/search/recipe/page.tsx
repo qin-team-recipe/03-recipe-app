@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { AiOutlineHeart } from 'react-icons/ai';
 
+import { SearchBox } from '@/app/_components/search-box';
+
 type RecipeList = {
   id: string;
   img: string;
@@ -47,32 +49,41 @@ const recipeList: RecipeList[] = [
   },
 ];
 
-export default async function SearchRecipe() {
+export default async function SearchRecipe({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
+  const { q } = searchParams as { [key: string]: string };
+
   return (
     <>
-      {recipeList.map((item) => (
-        <Link
-          href={`/recipe/${item.id}`}
-          key={item.id}
-          className='w-[calc(50%_-_6px)] '
-        >
-          <div className='relative aspect-square rounded-2xl bg-red-200'>
-            {/* imgが入る */}
-            <div></div>
-            {/* マイレシピだったらライクは仕様上表示させない？ */}
-            {item.like !== 0 && (
-              <div className='absolute right-2 top-2 flex h-[26px] w-[67px] items-center justify-center gap-x-1 rounded-2xl bg-[#040013]/50'>
-                <AiOutlineHeart size='14px' color='white' />
-                <p className='text-sm text-white'>{item.like}</p>
-              </div>
-            )}
-          </div>
-          <p className='pt-2 text-xs font-bold leading-[18px] line-clamp-2'>
-            {item.title}
-          </p>
-          <p className='truncate pt-1 text-[10px] leading-3'>{item.chef}</p>
-        </Link>
-      ))}
+      <SearchBox q={q} />
+      <div className='flex flex-wrap gap-x-3 gap-y-4 px-4 pt-2'>
+        {recipeList.map((item) => (
+          <Link
+            href={`/recipe/${item.id}`}
+            key={item.id}
+            className='w-[calc(50%_-_6px)] '
+          >
+            <div className='relative aspect-square rounded-2xl bg-red-200'>
+              {/* imgが入る */}
+              <div></div>
+              {/* マイレシピだったらライクは仕様上表示させない？ */}
+              {item.like !== 0 && (
+                <div className='absolute right-2 top-2 flex h-[26px] w-[67px] items-center justify-center gap-x-1 rounded-2xl bg-[#040013]/50'>
+                  <AiOutlineHeart size='14px' color='white' />
+                  <p className='text-sm text-white'>{item.like}</p>
+                </div>
+              )}
+            </div>
+            <p className='pt-2 text-xs font-bold leading-[18px] line-clamp-2'>
+              {item.title}
+            </p>
+            <p className='truncate pt-1 text-[10px] leading-3'>{item.chef}</p>
+          </Link>
+        ))}
+      </div>
     </>
   );
 }

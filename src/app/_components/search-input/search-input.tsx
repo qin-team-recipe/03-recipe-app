@@ -3,6 +3,7 @@
 import {
   ReadonlyURLSearchParams,
   usePathname,
+  useRouter,
   useSearchParams,
 } from 'next/navigation';
 import { ChangeEvent, FC, useEffect, useState, useTransition } from 'react';
@@ -23,6 +24,7 @@ export const SearchInput: FC = () => {
   const path = usePathname();
   const [isPending, startTransition] = useTransition();
   const [text, setText] = useState('');
+  const router = useRouter();
 
   const newParams = new URLSearchParams(searchParams.toString());
 
@@ -33,7 +35,7 @@ export const SearchInput: FC = () => {
       newParams.delete('q');
     }
     const timeoutId = setTimeout(() => {
-      history.replaceState({}, '', createUrl(path, newParams));
+      router.push(createUrl(path, newParams));
     }, 1000);
 
     return () => {
