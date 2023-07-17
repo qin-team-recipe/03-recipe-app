@@ -38,14 +38,14 @@ export default async function Layout({
       <RecipeDetail
         chefName='しまぶーシェフ'
         chefId='1'
-        recipeTitle='グラタン'
+        recipeTitle='グラタングラタングラタングラタングラタン'
         description='はじめてでも失敗なく作れるような、鶏肉や玉ねぎを具とした基本的なマカロニグラタンのレシピです。ソースと具材炒めを別器具で行うレシピも多いですが、グラタンの具を炒めたフライパンの中で、そのままホワイトソースを仕上げる手軽な作り方にしています。ぜひお試しください。'
         favorite={1}
         isFavorite={false}
       >
         <ActionButton
           truthyLabel='お気に入りから削除'
-          falsyLabel='お気に入りに追加'
+          falsyLabel='お気に入りに追加済'
         />
       </RecipeDetail>
       <Tabs tabs={tabs} />
