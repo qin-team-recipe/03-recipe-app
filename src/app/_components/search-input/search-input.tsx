@@ -30,7 +30,7 @@ export const SearchInput: FC = () => {
 
   useEffect(() => {
     if (text !== '') {
-      newParams.set('q', text);
+      newParams.set('q', encodeURIComponent(text));
     } else {
       newParams.delete('q');
     }

@@ -31,7 +31,7 @@ export const SearchBox: FC<Props> = ({ q = '' }) => {
       </div>
       <Tabs tabs={tabs} />
       <p className='gap-0 px-4 pt-5 text-xl font-bold'>
-        {q === '' ? '話題のレシピ' : `「${q}」で検索`}
+        {q === '' ? '話題のレシピ' : `「${decodeURI(q)}」で検索`}
       </p>
     </div>
   );
