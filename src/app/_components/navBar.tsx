@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { FC, ReactElement } from 'react';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { BsCart2 } from 'react-icons/bs';
@@ -63,8 +64,7 @@ export const NavBar: FC = () => {
   });
   const { width } = useGetWindowSize();
 
-  // useRouterを使用する想定の仮置き
-  const path = '/search';
+  const path = usePathname();
 
   const navbarItem: NavBarItem[] = [
     {
@@ -95,27 +95,27 @@ export const NavBar: FC = () => {
       </div>
       <div className={buttonContainer()}>
         {navbarItem.map((item) => (
-          <Link key={item.key} href={item.path}>
-            <button
-              className={icon({
+          <Link
+            href={item.path}
+            key={item.key}
+            className={icon({
+              class:
+                item.path === path
+                  ? 'text-[#CA3214]'
+                  : 'text-[#6F6E77] lg:text-[#1A1523]',
+            })}
+          >
+            {item.icon}
+            <p
+              className={label({
                 class:
                   item.path === path
                     ? 'text-[#CA3214]'
                     : 'text-[#6F6E77] lg:text-[#1A1523]',
               })}
             >
-              {item.icon}
-              <p
-                className={label({
-                  class:
-                    item.path === path
-                      ? 'text-[#CA3214]'
-                      : 'text-[#6F6E77] lg:text-[#1A1523]',
-                })}
-              >
-                {item.label}
-              </p>
-            </button>
+              {item.label}
+            </p>
           </Link>
         ))}
       </div>
