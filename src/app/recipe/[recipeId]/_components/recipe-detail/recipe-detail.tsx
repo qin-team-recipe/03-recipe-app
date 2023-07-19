@@ -25,7 +25,7 @@ type Props = {
   recipeTitle: string;
   description: string;
   imgUrl?: string;
-  favorite: number;
+  favorite?: number;
   isFavorite: boolean;
 };
 
