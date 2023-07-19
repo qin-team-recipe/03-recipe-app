@@ -4,12 +4,11 @@ import { FiCopy } from 'react-icons/fi';
 import { tv } from 'tailwind-variants';
 
 const copyButton = tv({
-  base: 'flex items-center gap-0.5 text-xs text-[#0066DB]',
+  base: 'flex items-center gap-0.5 text-xs text-blue-11',
 });
 
 type RecipeItem = {
   text: string;
-  annotation: string;
 };
 
 type Props = {
@@ -19,7 +18,7 @@ type Props = {
 export const CopyButton: FC<Props> = ({ recipeItems }) => {
   const saveToClipboard = () => {
     const clipboardText = recipeItems
-      .map((item, i) => `${i + 1}:${item.text}\n${item.annotation}`)
+      .map((item, i) => `${i + 1}:${item.text}`)
       .join('\n');
 
     navigator.clipboard.writeText(clipboardText);

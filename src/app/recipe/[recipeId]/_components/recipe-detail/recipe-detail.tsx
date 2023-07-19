@@ -9,9 +9,9 @@ const recipe = tv({
   slots: {
     base: 'flex flex-col gap-3',
     backIcon:
-      'absolute left-5 top-5 flex h-8 w-8 items-center justify-center rounded-full bg-black/20 p-1',
+      'absolute left-5 top-5 flex h-8 w-8 items-center justify-center rounded-full bg-mauve-12/20 p-1 text-mauve-1',
     titleSection: 'flex items-start justify-between',
-    titleText: 'text-xl font-bold text-[#1A1523]',
+    titleText: 'text-xl font-bold text-mauve-12',
     snsIcons: 'flex items-center justify-center gap-3',
     text: 'text-sm text-[#6F6E77]',
   },
@@ -41,12 +41,12 @@ export const RecipeDetail: React.FC<Props & PropsWithChildren> = ({
   return (
     <div className={base()}>
       <div className='relative'>
-        <div className='aspect-square  bg-red-200'>
+        <div className='aspect-square bg-tomato-7'>
           {imgUrl && <Image alt='image' src={imgUrl} />}
         </div>
         {/* TODO: 画面遷移処理 */}
         <div className={backIcon()}>
-          <MdArrowBack className='h-8 w-8 text-white' />
+          <MdArrowBack className='h-8 w-8 text-mauve-1' />
         </div>
       </div>
 
@@ -56,15 +56,15 @@ export const RecipeDetail: React.FC<Props & PropsWithChildren> = ({
           <RiYoutubeLine className='h-6 w-6' />
           <RiInstagramLine className='h-6 w-6' />
           {/* TODO: メニュー表示/ */}
-          <RiMoreLine className='h-5 w-5 rounded-full border-2 border-[#1A1523]' />
+          <RiMoreLine className='h-5 w-5 rounded-full border-2 border-mauve-12' />
         </div>
       </div>
-      <p className='text-[#1A1523]'>{description}</p>
+      <p className='text-mauve-12'>{description}</p>
       <div className='flex items-center gap-4'>
         {/* TODO: シェフ詳細へのリンク設定 */}
         <Link href={`/chef/${chefId}`} className='flex items-center gap-2'>
           {/* TODO: シェフ画像設定 */}
-          <div className='h-5 w-5 rounded-full bg-[#D9D9D9]'></div>
+          <div className='h-5 w-5 rounded-full bg-mauve-6' />
           <p className={text()}>{chefName}</p>
         </Link>
         {favorite !== 0 && (
