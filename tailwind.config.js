@@ -19,5 +19,8 @@ module.exports = withTV({
       },
     },
   },
-  plugins: [require('@tailwindcss/line-clamp')],
+  plugins: [
+    require('tailwindcss-radix-colors'),
+    require('@tailwindcss/line-clamp'),
+  ],
 });
