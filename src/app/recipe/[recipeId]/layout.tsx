@@ -10,7 +10,7 @@ export const metadata = {
 };
 
 const layout = tv({
-  base: 'm-auto max-w-[400px]', // TODO: ここでmax-wを指定せずサイドバーと合わせて指定した方がよさそう
+  base: 'm-auto flex max-w-[400px] flex-col gap-5', // TODO: ここでmax-wを指定せずサイドバーと合わせて指定した方がよさそう
 });
 
 export default async function Layout({
@@ -48,8 +48,10 @@ export default async function Layout({
           falsyLabel='お気に入りに追加済'
         />
       </RecipeDetail>
-      <Tabs tabs={tabs} />
-      {children}
+      <div>
+        <Tabs tabs={tabs} />
+        {children}
+      </div>
     </main>
   );
 }
