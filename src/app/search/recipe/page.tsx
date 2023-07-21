@@ -73,11 +73,11 @@ export default async function SearchRecipe({
               {item.like !== 0 && (
                 <div className='absolute right-2 top-2 flex h-[26px] w-[67px] items-center justify-center gap-x-1 rounded-2xl bg-mauve-10/50'>
                   <AiOutlineHeart size='14px' color='white' />
-                  <p className='text-white text-sm'>{item.like}</p>
+                  <p className='text-sm text-whitea-12'>{item.like}</p>
                 </div>
               )}
             </div>
-            <p className='pt-2 text-xs font-bold leading-[18px] text-mauve-12 line-clamp-2'>
+            <p className='line-clamp-2 pt-2 text-xs font-bold leading-[18px] text-mauve-12'>
               {item.title}
             </p>
             <p className='truncate pt-1 text-[10px] leading-3 text-mauve-11'>

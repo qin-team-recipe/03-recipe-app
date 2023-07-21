@@ -41,6 +41,7 @@ export const SearchInput: FC = () => {
     return () => {
       clearTimeout(timeoutId);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [text]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -54,8 +55,8 @@ export const SearchInput: FC = () => {
 
   return (
     <div
-      className='focus-within:ring-gray-300 flex h-full flex-1 items-center rounded-lg
-        bg-mauve-4 pl-4 pr-3 focus-within:ring-2 focus-within:ring-inset'
+      className='flex h-full flex-1 items-center rounded-lg bg-mauve-4
+        pl-4 pr-3 focus-within:ring-2 focus-within:ring-inset focus-within:ring-mauve-7'
     >
       <input
         type='text'
@@ -67,7 +68,7 @@ export const SearchInput: FC = () => {
         value={text}
       />
       {isPending ? (
-        <div className='border-black h-5 w-5 animate-spin rounded-full border-2 border-t-transparent' />
+        <div className='h-5 w-5 animate-spin rounded-full border-2 border-blacka-12 border-t-transparent' />
       ) : text !== '' ? (
         <button onClick={() => setText('')} className='w-5'>
           <RxCross2 size='1.25rem' />
