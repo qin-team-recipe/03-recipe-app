@@ -4,7 +4,7 @@ type Props = {
 
 export default function Layout({ children }: Props) {
   return (
-    <main className='mx-auto h-auto max-w-[490px] pt-2'>
+    <main className='mx-auto h-auto max-w-[490px] py-3'>
       <div>{children}</div>
     </main>
   );
