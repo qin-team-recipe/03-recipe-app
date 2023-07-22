@@ -7,12 +7,12 @@ import { Tabs } from '@/app/_components/tabs';
 
 const tabs = [
   {
-    path: `/search/chef`,
-    tabText: 'シェフ',
-  },
-  {
     path: `/search/recipe`,
     tabText: 'レシピ',
+  },
+  {
+    path: `/search/chef`,
+    tabText: 'シェフ',
   },
 ];
 
