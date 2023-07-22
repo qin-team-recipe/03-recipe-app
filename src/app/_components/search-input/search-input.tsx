@@ -8,6 +8,20 @@ import {
 } from 'next/navigation';
 import { ChangeEvent, FC, useEffect, useState, useTransition } from 'react';
 import { RxCross2 } from 'react-icons/rx';
+import { tv } from 'tailwind-variants';
+
+// eslint-disable-next-line tailwindcss/no-custom-classname
+const searchInput = tv({
+  slots: {
+    container:
+      'flex h-full flex-1 items-center rounded-lg bg-mauve-4 pl-4 pr-3 focus-within:ring-2 focus-within:ring-inset focus-within:ring-mauve-7',
+    input: 'flex-1 bg-mauve-4 pr-3 font-bold outline-none',
+    loading:
+      'h-5 w-5 animate-spin rounded-full border-2 border-blacka-12 border-t-transparent',
+  },
+});
+
+const { container, input, loading } = searchInput();
 
 const createUrl = (
   path: string,
@@ -54,21 +68,18 @@ export const SearchInput: FC = () => {
   };
 
   return (
-    <div
-      className='flex h-full flex-1 items-center rounded-lg bg-mauve-4
-        pl-4 pr-3 focus-within:ring-2 focus-within:ring-inset focus-within:ring-mauve-7'
-    >
+    <div className={container()}>
       <input
         type='text'
         name='search'
-        className='flex-1 bg-mauve-4 pr-3 font-bold outline-none '
+        className={input()}
         placeholder='シェフやレシピを検索'
         autoComplete='off'
         onChange={handleChange}
         value={text}
       />
       {isPending ? (
-        <div className='h-5 w-5 animate-spin rounded-full border-2 border-blacka-12 border-t-transparent' />
+        <div className={loading()} />
       ) : text !== '' ? (
         <button onClick={() => setText('')} className='w-5'>
           <RxCross2 size='1.25rem' />
