@@ -2,8 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { PropsWithChildren } from 'react';
 import { MdArrowBack } from 'react-icons/md';
-import { RiYoutubeLine, RiInstagramLine, RiMoreLine } from 'react-icons/ri';
 import { tv } from 'tailwind-variants';
+
+import { SnsIcons } from '@/app/_components/sns-icons';
+import { Sns } from '@/app/_types';
 
 const recipe = tv({
   slots: {
@@ -12,12 +14,11 @@ const recipe = tv({
       'absolute left-5 top-5 flex h-8 w-8 items-center justify-center rounded-full bg-mauve-12/20 p-1 text-mauve-1',
     titleSection: 'flex items-start justify-between',
     titleText: 'text-xl font-bold text-mauve-12',
-    snsIcons: 'flex items-center justify-center gap-3',
     text: 'text-sm text-[#6F6E77]',
   },
 });
 
-const { base, backIcon, titleSection, titleText, snsIcons, text } = recipe();
+const { base, backIcon, titleSection, titleText, text } = recipe();
 
 type Props = {
   chefName: string;
@@ -52,12 +53,7 @@ export const RecipeDetail: React.FC<Props & PropsWithChildren> = ({
       <div className='flex flex-col gap-3 px-4'>
         <div className={titleSection()}>
           <p className={titleText()}>{recipeTitle}</p>
-          <div className={snsIcons()}>
-            <RiYoutubeLine className='h-6 w-6' />
-            <RiInstagramLine className='h-6 w-6' />
-            {/* TODO: メニュー表示/ */}
-            <RiMoreLine className='h-5 w-5 rounded-full border-2 border-mauve-12' />
-          </div>
+          <SnsIcons snsList={snsList} />
         </div>
         <p className='text-mauve-12'>{description}</p>
         <div className='flex items-center gap-4'>
@@ -79,3 +75,12 @@ export const RecipeDetail: React.FC<Props & PropsWithChildren> = ({
     </div>
   );
 };
+
+// TODO: APIから取得予定
+const snsList: Sns[] = [
+  { type: 'youtube', url: '' },
+  { type: 'instagram', url: '' },
+  { type: 'tiktok', url: '' },
+  { type: 'twitter', url: '' },
+  { type: 'facebook', url: '' },
+];
