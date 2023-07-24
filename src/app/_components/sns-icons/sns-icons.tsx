@@ -18,6 +18,7 @@ import {
   DropdownMenuTrigger,
 } from '@/app/_components/ui/ui/dropdown-menu';
 import { Sns } from '@/app/_types';
+import { capitalizeFirstLetter } from '@/app/_utils/capitalizeFirstLetter';
 
 const snsIcons = tv({
   slots: {
@@ -88,7 +89,7 @@ export const SnsIcons: FC<Props> = ({ snsList }) => {
                 className={base()}
               >
                 <SnsIcon type={sns.type} isDropdown />
-                {sns.type}
+                {capitalizeFirstLetter(sns.type)}
               </Link>
             </DropdownMenuItem>
           ))}
