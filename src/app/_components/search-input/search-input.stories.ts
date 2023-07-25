@@ -12,10 +12,4 @@ export default meta;
 
 type Story = StoryObj<typeof SearchInput>;
 
-export const Primary: Story = {
-  parameters: {
-    nextjs: {
-      appDirectory: true,
-    },
-  },
-};
+export const Primary: Story = {};
