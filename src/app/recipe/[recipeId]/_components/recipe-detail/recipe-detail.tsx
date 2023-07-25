@@ -40,7 +40,7 @@ export const RecipeDetail: React.FC<Props & PropsWithChildren> = ({
   return (
     <div className={base()}>
       <div className='relative'>
-        <div className='aspect-square bg-tomato-7'>
+        <div className='aspect-square bg-tomato-4'>
           {imgUrl && <Image alt='image' src={imgUrl} />}
         </div>
         <BackButton />
