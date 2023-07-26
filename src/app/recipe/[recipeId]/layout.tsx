@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { MdArrowBack, MdFavoriteBorder } from 'react-icons/md';
 import { tv } from 'tailwind-variants';
 
@@ -11,12 +12,12 @@ export const metadata = {
 const recipeTab = tv({
   slots: {
     main: 'm-auto max-w-[400px]', // TODO: ここでmax-wを指定せずサイドバーと合わせて指定した方がよさそう
-    imageArea: 'aspect-square bg-red-200',
+    imageArea: 'bg-red-200 aspect-square',
     back: 'absolute left-5 top-5 h-8 w-8',
-    backIcon: 'h-8 w-8 text-white',
+    backIcon: 'text-white h-8 w-8',
     fav: 'absolute bottom-0 right-0 m-2 h-[3.75rem] w-[3.75rem] rounded-full bg-[#908E96]',
     favArea: 'absolute left-3 top-[0.875rem] h-8 w-8',
-    favIcon: 'h-9 w-9 text-white',
+    favIcon: 'text-white h-9 w-9',
     recipeName: 'm-4 text-[28px] font-bold',
   },
 });
@@ -77,9 +78,9 @@ export default async function Layout({
       {/* 料理画像 */}
       <div className='relative'>
         <div className={imageArea()} />
-        <div className={back()}>
+        <Link href='/search/recipe' className={back()}>
           <MdArrowBack className={backIcon()} />
-        </div>
+        </Link>
         <div className={fav()}>
           <div className={favArea()}>
             {/* TODO: Favo/Unfavoの切り替え */}
