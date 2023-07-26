@@ -1,6 +1,7 @@
 import { FC } from 'react';
-import { AiOutlinePlus } from 'react-icons/ai';
 import { IoEllipsisHorizontalCircle } from 'react-icons/io5';
+
+import { MemoPlusIcon } from '@/app/shopping/_components/memo/memo-plus-icon';
 
 type Props =
   | {
@@ -18,7 +19,9 @@ export const MemoHeader: FC<Props> = (props) => {
         {props.isRecipe ? props.recipeName : 'じぶんメモ'}
       </h2>
       <div className='flex'>
-        <AiOutlinePlus className='mr-4 h-5 w-5' />
+        <div className='mr-4'>
+          <MemoPlusIcon />
+        </div>
         <IoEllipsisHorizontalCircle className='h-5 w-5' />
       </div>
     </div>
