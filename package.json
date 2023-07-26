@@ -23,7 +23,6 @@
     ]
   },
   "dependencies": {
-    "@radix-ui/react-popover": "1.0.6",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@types/node": "20.2.5",
     "@types/react": "18.2.8",
