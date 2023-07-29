@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { tv } from 'tailwind-variants';
 
-import { SearchBox } from '@/app/_components/search-box';
+import { SearchBox } from '@/app/search/_components/search-box';
 
 type RecipeList = {
   id: string;

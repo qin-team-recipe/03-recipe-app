@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { TbToolsKitchen2 } from 'react-icons/tb';
 import { tv } from 'tailwind-variants';
 
-import { SearchBox } from '@/app/_components/search-box';
+import { SearchBox } from '@/app/search/_components/search-box';
 
 type ChefList = {
   id: string;

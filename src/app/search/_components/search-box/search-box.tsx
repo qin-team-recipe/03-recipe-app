@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { FC } from 'react';
 import { BiArrowBack } from 'react-icons/bi';
 
-import { SearchInput } from '@/app/_components/search-input';
 import { Tabs } from '@/app/_components/tabs';
+import { SearchInput } from '@/app/search/_components/search-input';
 
 const tabs = [
   {
