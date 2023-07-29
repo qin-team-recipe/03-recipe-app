@@ -1,8 +1,5 @@
-'use client';
-
 import {
   ReadonlyURLSearchParams,
-  usePathname,
   useRouter,
   useSearchParams,
 } from 'next/navigation';
@@ -33,9 +30,8 @@ const createUrl = (
   return `${path}${queryString}`;
 };
 
-export const SearchInput: FC = () => {
+export const SearchInput: FC<{ path: string }> = ({ path }) => {
   const searchParams = useSearchParams();
-  const path = usePathname();
   const [isPending, startTransition] = useTransition();
   const [text, setText] = useState('');
   const router = useRouter();
