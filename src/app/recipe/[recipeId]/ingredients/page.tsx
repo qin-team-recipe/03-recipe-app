@@ -1,13 +1,13 @@
 import { TbShoppingCartPlus } from 'react-icons/tb';
 import { tv } from 'tailwind-variants';
 
-import { IngredientsItem } from '@/app/_components/ingredients-item/ingredients-item';
+import { IngredientsItem } from '@/app/recipe/[recipeId]/ingredients/_components/ingredients-item';
 
 const ingredientsStyle = tv({
   slots: {
     base: 'mb-2 mt-4 flex justify-between px-2',
-    text: 'text-base font-bold',
-    icon: 'h-4 w-4 text-[#908E96]',
+    text: 'text-base font-bold text-mauve-12',
+    icon: 'h-4 w-4 text-mauve-9',
     button: 'flex items-center gap-1',
   },
 });
@@ -22,7 +22,7 @@ export default function Ingredients() {
         {/* TODO: お買い物リストに追加処理 */}
         <button className={button()}>
           <TbShoppingCartPlus className={icon()} />
-          <p className={text({ class: 'text-[#908E96]' })}>
+          <p className={text({ class: 'text-mauve-9' })}>
             まとめてお買い物に追加
           </p>
         </button>
@@ -31,7 +31,6 @@ export default function Ingredients() {
         <IngredientsItem
           key={i}
           text={ingredient.text}
-          annotation={ingredient.annotation}
           isLast={ingredients.length - 1 === i}
         />
       ))}
@@ -40,8 +39,8 @@ export default function Ingredients() {
 }
 
 const ingredients = [
-  { text: 'キャベツ', annotation: '5~6枚' },
-  { text: 'キャベツ', annotation: '5~6枚' },
-  { text: 'キャベツ', annotation: '5~6枚' },
-  { text: 'キャベツ', annotation: '5~6枚' },
+  { text: 'キャベツ' },
+  { text: 'キャベツ' },
+  { text: 'キャベツ' },
+  { text: 'キャベツ' },
 ];

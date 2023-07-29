@@ -13,10 +13,6 @@ type Story = StoryObj<typeof CopyButton>;
 
 export const Primary: Story = {
   args: {
-    recipeItems: [
-      { text: 'text1', annotation: 'annotation1' },
-      { text: 'text2', annotation: 'annotation2' },
-      { text: 'text3', annotation: 'annotation3' },
-    ],
+    recipeItems: [{ text: 'text1' }, { text: 'text2' }, { text: 'text3' }],
   },
 };
