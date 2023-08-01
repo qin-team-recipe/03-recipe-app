@@ -23,7 +23,11 @@ export const MemoIngredient: FC<Props> = (props) => {
             <RiCheckboxBlankCircleLine className='h-8 w-8 text-tomato-9' />
           )}
         </div>
-        <p className='mr-auto'>{props.ingredient.name}</p>
+        {props.ingredient.checked ? (
+          <p className='mr-auto'>{props.ingredient.name}</p>
+        ) : (
+          <p className='mr-auto text-mauve-8'>{props.ingredient.name}</p>
+        )}
         <div>
           <HiOutlineDotsVertical />
         </div>
