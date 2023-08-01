@@ -7,9 +7,9 @@ import { tv } from 'tailwind-variants';
 const tab = tv({
   slots: {
     nav: 'flex w-full text-center',
-    link: 'inline-block w-full border-b p-2',
-    text: 'text-[#1A1523]',
-    active: 'border-b-2 border-[#1A1523] font-semibold',
+    link: 'inline-block w-full border-b border-mauve-6 p-2',
+    text: 'text-mauve-12',
+    active: 'border-b-2 border-mauve-12 font-semibold',
   },
 });
 

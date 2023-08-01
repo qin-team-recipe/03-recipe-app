@@ -14,7 +14,6 @@ type Story = StoryObj<typeof RecipeStepItem>;
 export const Primary: Story = {
   args: {
     text: 'テキスト',
-    annotation: '注釈',
     index: 1,
   },
 };
