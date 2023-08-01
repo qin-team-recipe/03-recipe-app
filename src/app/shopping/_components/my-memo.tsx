@@ -6,9 +6,12 @@ import { MemoIngredient } from '@/app/shopping/_components/memo/memo-ingredient'
 const ingredients = [
   { name: 'キャベツ', checked: true },
   { name: 'にんじん', checked: false },
-  { name: 'じゃがいも', checked: false },
+  { name: 'じゃがいも', checked: true },
   { name: 'たまねぎ', checked: false },
-  { name: 'ぶた肉', checked: true },
+  {
+    name: 'ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉ぶた肉',
+    checked: true,
+  },
 ];
 
 export const MyMemo: FC = () => {
