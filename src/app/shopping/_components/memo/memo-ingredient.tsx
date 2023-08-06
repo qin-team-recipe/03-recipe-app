@@ -24,9 +24,9 @@ export const MemoIngredient: FC<Props> = (props) => {
           )}
         </div>
         {props.ingredient.checked ? (
-          <p className='mr-auto'>{props.ingredient.name}</p>
-        ) : (
           <p className='mr-auto text-mauve-8'>{props.ingredient.name}</p>
+        ) : (
+          <p className='mr-auto'>{props.ingredient.name}</p>
         )}
         <div>
           <HiOutlineDotsVertical />
