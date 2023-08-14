@@ -4,7 +4,7 @@ import { RecipeItem } from '@/app/_components/recipe-item';
 import { Recipe } from '@/app/_types';
 
 const style = tv({
-  base: 'flex flex-wrap gap-x-3 gap-y-4 px-4 pt-2',
+  base: 'relative flex flex-wrap gap-x-3 gap-y-4 px-4 pt-2',
 });
 
 export default function New() {
@@ -14,6 +14,9 @@ export default function New() {
         {recipeListItem.map((item) => (
           <RecipeItem key={item.id} recipeItem={item} />
         ))}
+        <button className='absolute bottom-7 right-24 h-12 w-[200px] rounded-full bg-tomato-9 px-2 py-3 text-mauve-1'>
+          レシピを追加する
+        </button>
       </div>
     </main>
   );
