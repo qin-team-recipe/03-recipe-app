@@ -13,22 +13,12 @@ export default meta;
 type Story = StoryObj<typeof SearchBox>;
 
 export const Primary: Story = {
-  parameters: {
-    nextjs: {
-      appDirectory: true,
-    },
-  },
   args: {
     q: '',
   },
 };
 
 export const Secondary: Story = {
-  parameters: {
-    nextjs: {
-      appDirectory: true,
-    },
-  },
   args: {
     q: 'グラタン',
   },

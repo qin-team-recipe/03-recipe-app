@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-const { withTV } = require('tailwind-variants/transformer');
+import { withTV } from 'tailwind-variants/transformer';
 
 module.exports = withTV({
+  darkMode: 'class',
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -19,5 +20,8 @@ module.exports = withTV({
       },
     },
   },
-  plugins: [require('tailwindcss-radix-colors')],
+  plugins: [
+    require('tailwindcss-animate'),
+    require('tailwindcss-radix-colors'),
+  ],
 });
