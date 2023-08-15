@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { SearchBox } from '@/app/_components/search-box/search-box';
+import { SearchBox } from '@/app/search/_components/search-box/search-box';
 
 const meta: Meta<typeof SearchBox> = {
   title: 'Search/SearchBox',
@@ -13,22 +13,12 @@ export default meta;
 type Story = StoryObj<typeof SearchBox>;
 
 export const Primary: Story = {
-  parameters: {
-    nextjs: {
-      appDirectory: true,
-    },
-  },
   args: {
     q: '',
   },
 };
 
 export const Secondary: Story = {
-  parameters: {
-    nextjs: {
-      appDirectory: true,
-    },
-  },
   args: {
     q: 'グラタン',
   },

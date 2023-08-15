@@ -1,21 +1,21 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { TabsTemplate } from './tabs';
+import { Tabs } from './tabs';
 
-const meta: Meta<typeof TabsTemplate> = {
+const meta: Meta<typeof Tabs> = {
   title: 'Ui/RecipeTabs',
-  component: TabsTemplate,
+  component: Tabs,
   tags: ['autodocs'],
 };
 
 export default meta;
-type Story = StoryObj<typeof TabsTemplate>;
+type Story = StoryObj<typeof Tabs>;
 
 export const Primary: Story = {
   args: {
     tabs: [
-      { path: '/recipe/1', tabText: '作り方', isActive: true },
-      { path: '/recipe/1/ingredients', tabText: '材料', isActive: false },
+      { path: '/recipe/1', tabText: '作り方' },
+      { path: '/recipe/1/ingredients', tabText: '材料' },
     ],
   },
 };
@@ -23,9 +23,9 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     tabs: [
-      { path: '/', tabText: 'すべて', isActive: true },
-      { path: '/chef', tabText: 'シェフ', isActive: false },
-      { path: '/recipe', tabText: 'レシピ', isActive: false },
+      { path: '/', tabText: 'すべて' },
+      { path: '/chef', tabText: 'シェフ' },
+      { path: '/recipe', tabText: 'レシピ' },
     ],
   },
 };

@@ -26,25 +26,7 @@ type Props = {
 
 export const Tabs: FC<Props> = ({ tabs }) => {
   const pathname = usePathname();
-  const tabsWithIsActive = tabs.map((tab) => ({
-    ...tab,
-    isActive: pathname === tab.path,
-  }));
 
-  return <TabsTemplate tabs={tabsWithIsActive} />;
-};
-
-type TabsTemplate = {
-  path: string;
-  tabText: string;
-  isActive?: boolean;
-};
-
-type TabsTemplateProps = {
-  tabs: TabsTemplate[];
-};
-
-export const TabsTemplate: FC<TabsTemplateProps> = ({ tabs }) => {
   return (
     <div className={nav()}>
       {tabs.map((tab) => (
@@ -52,8 +34,9 @@ export const TabsTemplate: FC<TabsTemplateProps> = ({ tabs }) => {
           key={tab.path}
           href={tab.path}
           className={link({
-            class: tab.isActive ? active() : '',
+            class: pathname === tab.path ? active() : '',
           })}
+          replace
         >
           <div className={text()}>{tab.tabText}</div>
         </Link>

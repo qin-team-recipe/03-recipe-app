@@ -1,8 +1,8 @@
 import { tv } from 'tailwind-variants';
 
 import { RecipeItem } from '@/app/_components/recipe-item';
-import { SearchBox } from '@/app/_components/search-box';
 import { Recipe } from '@/app/_types';
+import { SearchBox } from '@/app/search/_components/search-box';
 
 const recipeListItem: Recipe[] = [
   {

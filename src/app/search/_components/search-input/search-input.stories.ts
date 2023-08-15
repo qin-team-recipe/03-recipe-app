@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { SearchInput } from './';
+import { SearchInput } from '.';
 
 const meta: Meta<typeof SearchInput> = {
   title: 'Search/SearchInput',
@@ -12,10 +12,4 @@ export default meta;
 
 type Story = StoryObj<typeof SearchInput>;
 
-export const Primary: Story = {
-  parameters: {
-    nextjs: {
-      appDirectory: true,
-    },
-  },
-};
+export const Primary: Story = {};
