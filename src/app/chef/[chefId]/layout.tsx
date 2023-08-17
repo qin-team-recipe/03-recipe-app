@@ -1,6 +1,7 @@
 import { tv } from 'tailwind-variants';
 
 import { Tabs } from '@/app/_components/tabs';
+import { AddButton } from '@/app/chef/[chefId]/_components/add-button';
 
 export const metadata = {
   title: 'シェフ詳細',
@@ -22,11 +23,11 @@ export default async function Layout({
 
   const tabs = [
     {
-      path: `/chef/${chefId}/new`,
+      path: `/chef/${chefId}/new-recipes`,
       tabText: '新着レシピ',
     },
     {
-      path: `/chef/${chefId}/popular`,
+      path: `/chef/${chefId}/hot-recipes`,
       tabText: '人気レシピ',
     },
   ];
@@ -53,6 +54,9 @@ export default async function Layout({
       <div>
         <Tabs tabs={tabs} />
         {children}
+        <div className='fixed bottom-7 translate-x-24'>
+          <AddButton />
+        </div>
       </div>
     </main>
   );
