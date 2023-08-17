@@ -14,9 +14,6 @@ export default function New() {
         {recipeListItem.map((item) => (
           <RecipeItem key={item.id} recipeItem={item} />
         ))}
-        <button className='absolute bottom-7 right-24 h-12 w-[200px] rounded-full bg-tomato-9 px-2 py-3 text-mauve-1'>
-          レシピを追加する
-        </button>
       </div>
     </main>
   );
