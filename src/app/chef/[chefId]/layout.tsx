@@ -1,7 +1,9 @@
 import { tv } from 'tailwind-variants';
 
+import { ActionButton } from '@/app/_components/action-button';
+import { SnsIcons } from '@/app/_components/sns-icons';
 import { Tabs } from '@/app/_components/tabs';
-import { AddButton } from '@/app/chef/[chefId]/_components/add-button';
+import { Sns } from '@/app/_types';
 
 export const metadata = {
   title: 'シェフ詳細',
@@ -34,30 +36,47 @@ export default async function Layout({
 
   return (
     <main className={layout()}>
-      <div className='flex flex-col justify-center gap-1 self-stretch'>
-        <p className='text-2xl font-bold text-mauve-12'>山田シェフ</p>
-        <p className='text-sm text-mauve-12'>foobarid</p>
+      <div className='flex items-center justify-end'>
+        <SnsIcons snsList={snsList} />
       </div>
-      <div className='flex gap-4 self-stretch'>
-        <div className='flex items-center gap-1'>
-          <p className='text-sm font-bold text-mauve-11'>123</p>
-          <p className='text-sm text-mauve-11'>レシピ</p>
+      <div className='flex justify-between gap-1 self-stretch'>
+        <div className='flex flex-col items-start justify-center gap-1'>
+          <p className='text-2xl font-bold text-mauve-12'>山田シェフ</p>
+          <p className='text-sm text-mauve-12'>foobarid</p>
         </div>
-        <div className='flex items-center gap-1'>
-          <p className='text-sm font-bold text-mauve-11'>456</p>
-          <p className='text-sm text-mauve-11'>フォロワー</p>
+        <div className='h-16 w-16 rounded-full bg-mauve-5' />
+      </div>
+      <div className='flex flex-col gap-2'>
+        <p className='text-sm text-mauve-12'>
+          初の絵本出版！ 『 まねっこシェフ』 ・ふわふわ！スクランブルエッグ
+          ・にぎにぎ！おにぎり 主婦の友社より３月３日、２冊同時発売！
+          絶賛発売中！
+        </p>
+        <div className='flex gap-4 self-stretch'>
+          <div className='flex items-center gap-1'>
+            <p className='text-sm font-bold text-mauve-11'>123</p>
+            <p className='text-sm text-mauve-11'>レシピ</p>
+          </div>
+          <div className='flex items-center gap-1'>
+            <p className='text-sm font-bold text-mauve-11'>456</p>
+            <p className='text-sm text-mauve-11'>フォロワー</p>
+          </div>
         </div>
       </div>
-      <button className='rounded-md border border-mauve-12 px-3 py-1'>
-        プロフィールを編集
-      </button>
+      <ActionButton truthyLabel='フォローする' falsyLabel='フォロー中' />
       <div>
         <Tabs tabs={tabs} />
         {children}
-        <div className='fixed bottom-7 translate-x-24'>
-          <AddButton />
-        </div>
       </div>
     </main>
   );
 }
+
+// TODO: APIから取得予定
+const snsList: Sns[] = [
+  { type: 'youtube', url: '' },
+  { type: 'instagram', url: '' },
+  { type: 'tiktok', url: '' },
+  { type: 'twitter', url: '' },
+  { type: 'facebook', url: '' },
+];
