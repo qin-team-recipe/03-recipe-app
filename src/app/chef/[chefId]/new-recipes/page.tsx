@@ -4,10 +4,10 @@ import { RecipeItem } from '@/app/_components/recipe-item';
 import { Recipe } from '@/app/_types';
 
 const style = tv({
-  base: 'relative flex flex-wrap gap-x-3 gap-y-4 px-4 pt-2',
+  base: 'flex flex-wrap gap-x-3 gap-y-4 px-4 pt-2',
 });
 
-export default function New() {
+export default function NewRecipes() {
   return (
     <main>
       <div className={style()}>
