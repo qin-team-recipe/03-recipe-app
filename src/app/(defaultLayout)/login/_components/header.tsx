@@ -1,7 +1,7 @@
 import { cookies } from 'next/headers';
 import { FC } from 'react';
 
-import { getTitle } from '@/app/login/lib';
+import { getTitle } from '@/app/(defaultLayout)/login/lib';
 import { AFTER_LOGIN_URL_COOKIE_KEY, FRONT_BASE_URL } from '@/constants';
 
 export const Header: FC = () => {
