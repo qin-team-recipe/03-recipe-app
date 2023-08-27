@@ -1,43 +1,14 @@
-import { tv } from 'tailwind-variants';
-
 import { NavBar } from '@/app/_components/navBar';
 import { Sample } from '@/app/_components/sample';
 
-// eslint-disable-next-line tailwindcss/no-custom-classname
-const home = tv(
-  {
-    slots: {
-      main: '',
-      content: '',
-    },
-    variants: {
-      size: {
-        large: {
-          main: 'mx-auto flex w-8/12 gap-x-4',
-          content: 'order-2',
-        },
-      },
-    },
-  },
-  {
-    responsiveVariants: ['lg'],
-  }
-);
-
 export default function Home() {
-  const { main, content } = home({
-    size: {
-      lg: 'large',
-    },
-  });
-
   return (
-    <main className={main()}>
-      <div className={content()}>
+    <div className='mx-auto flex min-h-screen flex-col-reverse sm:max-w-2xl sm:flex-row sm:gap-x-3 sm:px-4 sm:pl-6'>
+      <NavBar />
+      <main className='border-mauve-dim flex-1 overflow-hidden pb-20 sm:border-x sm:pb-16'>
         <h1>レシピアプリ</h1>
         <Sample text='sample' />
-      </div>
-      <NavBar />
-    </main>
+      </main>
+    </div>
   );
 }
