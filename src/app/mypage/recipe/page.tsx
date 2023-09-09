@@ -2,8 +2,12 @@
 
 import { tv } from 'tailwind-variants';
 
+import { ActionButton } from '@/app/_components/action-button';
+import { Button } from '@/app/_components/button';
 import { Tabs } from '@/app/_components/tabs';
-import { RecipeDetail } from '@/app/mypage/recipe/_components/recipe-detail/recipe-detail';
+import { Badge } from '@/app/_components/ui/ui/badge';
+import { RecipeDetail } from '@/app/mypage/_components/recipe-detail/recipe-detail';
+import { SubText } from '@/app/mypage/_components/sub-text';
 import { CopyButton } from '@/app/recipe/[recipeId]/_components/copy-button';
 import { RecipeStepItem } from '@/app/recipe/[recipeId]/_components/recipe-step-item';
 
@@ -28,6 +32,17 @@ export default function Recipe({ params }: { params: { recipeId: string } }) {
   return (
     <main className={layout()}>
       <RecipeDetail recipeName='グラタングラタングラタングラタン' />
+      <div className='flex gap-4'>
+        <Badge>非公開</Badge>
+        <SubText label='お気に入り' value='456' />
+      </div>
+      <div className='grid h-full grid-cols-2 gap-4'>
+        <ActionButton
+          falsyLabel='お気に入りに追加済'
+          truthyLabel='お気に入りに追加'
+        />
+        <Button variant='blackOutline'>レシピを編集</Button>
+      </div>
       <div>
         <Tabs tabs={tabs} />
         {recipeItems.map((item, i) => (
