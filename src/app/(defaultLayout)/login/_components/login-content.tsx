@@ -2,9 +2,9 @@ import { cookies } from 'next/headers';
 import Image from 'next/image';
 import { FC } from 'react';
 
-import { AppleLoginButton } from '@/app/login/_components/apple-login-button';
-import { GoogleLoginButton } from '@/app/login/_components/google-login-button';
-import { getImage } from '@/app/login/lib';
+import { AppleLoginButton } from '@/app/(defaultLayout)/login/_components/apple-login-button';
+import { GoogleLoginButton } from '@/app/(defaultLayout)/login/_components/google-login-button';
+import { getImage } from '@/app/(defaultLayout)/login/lib';
 import { AFTER_LOGIN_URL_COOKIE_KEY, FRONT_BASE_URL } from '@/constants';
 
 export const LoginContent: FC = () => {

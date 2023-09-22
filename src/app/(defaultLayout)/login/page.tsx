@@ -1,5 +1,5 @@
-import { Header } from '@/app/login/_components/header';
-import { LoginContent } from '@/app/login/_components/login-content';
+import { Header } from '@/app/(defaultLayout)/login/_components/header';
+import { LoginContent } from '@/app/(defaultLayout)/login/_components/login-content';
 
 export default function Page() {
   return (
