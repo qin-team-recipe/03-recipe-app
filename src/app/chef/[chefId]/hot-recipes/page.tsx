@@ -12,7 +12,7 @@ export default function HotRecipes() {
     <main>
       <div className={style()}>
         {recipeListItem.map((item) => (
-          <RecipeItem key={item.id} recipeItem={item} />
+          <RecipeItem key={item.id} recipeItem={item} path='/recipe' />
         ))}
       </div>
     </main>
