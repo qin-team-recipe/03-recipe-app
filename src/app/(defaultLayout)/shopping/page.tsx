@@ -1,6 +1,6 @@
-import { Header } from '@/app/shopping/_components/header';
-import { MyMemo } from '@/app/shopping/_components/my-memo';
-import { RecipeMemo } from '@/app/shopping/_components/recipe-memo';
+import { Header } from '@/app/(defaultLayout)/shopping/_components/header';
+import { MyMemo } from '@/app/(defaultLayout)/shopping/_components/my-memo';
+import { RecipeMemo } from '@/app/(defaultLayout)/shopping/_components/recipe-memo';
 
 const recipes = [
   {

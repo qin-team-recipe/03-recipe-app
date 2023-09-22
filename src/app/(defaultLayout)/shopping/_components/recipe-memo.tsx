@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
-import { MemoHeader } from '@/app/shopping/_components/memo/memo-header';
-import { MemoIngredient } from '@/app/shopping/_components/memo/memo-ingredient';
+import { MemoHeader } from '@/app/(defaultLayout)/shopping/_components/memo/memo-header';
+import { MemoIngredient } from '@/app/(defaultLayout)/shopping/_components/memo/memo-ingredient';
 
 type Props = {
   recipe: {

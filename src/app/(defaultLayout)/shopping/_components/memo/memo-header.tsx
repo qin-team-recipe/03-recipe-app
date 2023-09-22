@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { IoEllipsisHorizontalCircle } from 'react-icons/io5';
 
-import { MemoPlusIcon } from '@/app/shopping/_components/memo/memo-plus-icon';
+import { MemoPlusIcon } from '@/app/(defaultLayout)/shopping/_components/memo/memo-plus-icon';
 
 type Props =
   | {
