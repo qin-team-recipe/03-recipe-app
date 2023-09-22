@@ -2,12 +2,12 @@
 
 import { tv } from 'tailwind-variants';
 
+import { MypageHeader } from '@/app/(defaultLayout)/mypage/_components/mypage-header';
+import { SubText } from '@/app/(defaultLayout)/mypage/_components/sub-text';
 import { Button } from '@/app/_components/button';
 import { RecipeItem } from '@/app/_components/recipe-item';
 import { Tabs } from '@/app/_components/tabs';
 import { Recipe } from '@/app/_types';
-import { MypageHeader } from '@/app/mypage/_components/mypage-header';
-import { SubText } from '@/app/mypage/_components/sub-text';
 
 const layout = tv({
   slots: {
@@ -18,7 +18,7 @@ const layout = tv({
 
 const { base, style } = layout();
 
-export default function HotRecipe({ params }: { params: { id: string } }) {
+export default function NewRecipe({ params }: { params: { id: string } }) {
   const { id } = params;
 
   const tabs = [

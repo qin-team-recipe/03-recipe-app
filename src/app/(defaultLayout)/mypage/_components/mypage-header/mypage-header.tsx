@@ -5,7 +5,7 @@ import { FC } from 'react';
 import { MdArrowBack } from 'react-icons/md';
 import { tv } from 'tailwind-variants';
 
-import { EditMenu } from '@/app/mypage/_components/edit-menu';
+import { EditMenu } from '@/app/(defaultLayout)/mypage/_components/edit-menu';
 
 const layout = tv({
   base: 'flex items-center justify-between gap-3',
