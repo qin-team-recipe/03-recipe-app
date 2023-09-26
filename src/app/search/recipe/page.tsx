@@ -58,7 +58,7 @@ export default async function SearchRecipe({
       <SearchBox q={q} />
       <div className={searchRecipe()}>
         {recipeListItem.map((item) => (
-          <RecipeItem key={item.id} recipeItem={item} />
+          <RecipeItem key={item.id} recipeItem={item} path='/recipe' />
         ))}
       </div>
     </>
