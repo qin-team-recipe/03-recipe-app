@@ -23,7 +23,7 @@ export const MypageHeader: FC = () => {
         <MdArrowBack className='h-8 w-8 text-mauve-12' />
       </button>
 
-      <EditMenu type='edit' />
+      <EditMenu type='mypage' />
     </div>
   );
 };

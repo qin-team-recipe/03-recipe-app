@@ -1,6 +1,7 @@
 'use client';
 import { DropdownMenuGroup } from '@radix-ui/react-dropdown-menu';
 import {
+  IconCopy,
   IconDotsCircleHorizontal,
   IconLockOpen,
   IconPencil,
@@ -65,6 +66,11 @@ const EditContent = () => (
         </Link>
       </DropdownMenuItem>
     </DropdownMenuGroup>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem className={menuItem()}>
+      <IconTrash size={20} />
+      削除する
+    </DropdownMenuItem>
   </DropdownMenuContent>
 );
 const MypageContent = () => (
@@ -78,17 +84,10 @@ const MypageContent = () => (
       </DropdownMenuItem>
       <DropdownMenuItem className={menuItem()}>
         <Link href='/' className={base()}>
-          <IconLockOpen size={20} />
+          <IconCopy size={20} />
           URLをコピーする
         </Link>
       </DropdownMenuItem>
     </DropdownMenuGroup>
-    <DropdownMenuSeparator />
-    <DropdownMenuItem className={menuItem()}>
-      <Link href='/' className={base()}>
-        <IconTrash size={20} />
-        削除する
-      </Link>
-    </DropdownMenuItem>
   </DropdownMenuContent>
 );
