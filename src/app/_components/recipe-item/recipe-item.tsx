@@ -23,12 +23,13 @@ const { base, recipeImg, favBox, favText, recipeTitle, chefName } =
 
 type Props = {
   recipeItem: Recipe;
+  path: string;
 };
 
-export const RecipeItem: FC<Props> = ({ recipeItem }) => {
+export const RecipeItem: FC<Props> = ({ recipeItem, path }) => {
   return (
     <Link
-      href={`/recipe/${recipeItem.id}`}
+      href={`${path}/${recipeItem.id}`}
       key={recipeItem.id}
       className={base()}
     >

@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { tv } from 'tailwind-variants';
 
 const button = tv({
-  base: 'flex w-full items-center justify-center rounded border border-tomato-9 px-3 py-1',
+  base: 'flex w-full items-center justify-center rounded border border-tomato-9 px-3 text-sm',
   variants: {
     isActive: {
       true: 'bg-tomato-9 text-mauve-1',
