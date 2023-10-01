@@ -49,7 +49,7 @@ export default function NewRecipe({ params }: { params: { id: string } }) {
       <div className={style()}>
         <Tabs tabs={tabs} />
         {recipeListItem.map((item) => (
-          <RecipeItem key={item.id} recipeItem={item} path='/mypage' />
+          <RecipeItem key={item.id} recipeItem={item} path={`/mypage/${id}`} />
         ))}
       </div>
     </main>

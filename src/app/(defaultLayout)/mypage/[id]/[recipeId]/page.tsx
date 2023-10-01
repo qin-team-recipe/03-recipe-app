@@ -1,8 +1,9 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+import { MdArrowBack } from 'react-icons/md';
 import { tv } from 'tailwind-variants';
 
-import { RecipeHeader } from '@/app/(defaultLayout)/mypage/_components/edit-header';
 import { EditMenu } from '@/app/(defaultLayout)/mypage/_components/edit-menu';
 import { SubText } from '@/app/(defaultLayout)/mypage/_components/sub-text';
 import { ActionButton } from '@/app/_components/action-button';
@@ -22,6 +23,7 @@ export default function Recipe({
   params: { id: string; recipeId: string };
 }) {
   const { id, recipeId } = params;
+  const router = useRouter();
 
   const tabs = [
     {
@@ -36,7 +38,14 @@ export default function Recipe({
 
   return (
     <main className={layout()}>
-      <RecipeHeader />
+      <div className='flex items-center justify-between gap-3'>
+        <button
+          className='flex h-8 w-8 items-center justify-center rounded-full p-1'
+          onClick={() => router.push(`/mypage/${id}/new-recipes`)}
+        >
+          <MdArrowBack className='h-8 w-8 text-mauve-12' />
+        </button>
+      </div>
       <div className='flex items-start justify-between gap-1 self-stretch'>
         <p className='text-2xl font-bold text-mauve-12'>
           グラタングラタングラタングラタングラタン

@@ -65,6 +65,13 @@ const EditContent = () => (
         </Link>
       </DropdownMenuItem>
     </DropdownMenuGroup>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem className={menuItem()}>
+      <Link href='/' className={base()}>
+        <IconTrash size={20} />
+        削除する
+      </Link>
+    </DropdownMenuItem>
   </DropdownMenuContent>
 );
 const MypageContent = () => (
@@ -83,12 +90,5 @@ const MypageContent = () => (
         </Link>
       </DropdownMenuItem>
     </DropdownMenuGroup>
-    <DropdownMenuSeparator />
-    <DropdownMenuItem className={menuItem()}>
-      <Link href='/' className={base()}>
-        <IconTrash size={20} />
-        削除する
-      </Link>
-    </DropdownMenuItem>
   </DropdownMenuContent>
 );

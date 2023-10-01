@@ -1,8 +1,9 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+import { MdArrowBack } from 'react-icons/md';
 import { tv } from 'tailwind-variants';
 
-import { MypageHeader } from '@/app/(defaultLayout)/mypage/_components/mypage-header';
 import { SubText } from '@/app/(defaultLayout)/mypage/_components/sub-text';
 import { Button } from '@/app/_components/button';
 import { RecipeItem } from '@/app/_components/recipe-item';
@@ -20,6 +21,7 @@ const { base, style } = layout();
 
 export default function HotRecipe({ params }: { params: { id: string } }) {
   const { id } = params;
+  const router = useRouter();
 
   const tabs = [
     {
@@ -34,7 +36,14 @@ export default function HotRecipe({ params }: { params: { id: string } }) {
 
   return (
     <main className={base()}>
-      <MypageHeader />
+      <div className='flex items-center justify-between gap-3'>
+        <button
+          className='flex h-8 w-8 items-center justify-center rounded-full p-1'
+          onClick={() => router.push(`/mypage/${id}/new-recipes`)}
+        >
+          <MdArrowBack className='h-8 w-8 text-mauve-12' />
+        </button>
+      </div>
       <div className='flex justify-between gap-1 self-stretch'>
         <div className='flex flex-col items-start justify-center gap-1'>
           <p className='text-2xl font-bold text-mauve-12'>山田シェフ</p>
@@ -49,7 +58,7 @@ export default function HotRecipe({ params }: { params: { id: string } }) {
       <div className={style()}>
         <Tabs tabs={tabs} />
         {recipeListItem.map((item) => (
-          <RecipeItem key={item.id} recipeItem={item} path='/mypage' />
+          <RecipeItem key={item.id} recipeItem={item} path={`/mypage/${id}`} />
         ))}
       </div>
     </main>
