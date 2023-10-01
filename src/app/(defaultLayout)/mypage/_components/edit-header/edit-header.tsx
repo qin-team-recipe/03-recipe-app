@@ -9,7 +9,7 @@ const layout = tv({
   base: 'flex items-center justify-between gap-3',
 });
 
-export const RecipeHeader: FC = () => {
+export const EditHeader: FC = () => {
   const router = useRouter();
 
   return (

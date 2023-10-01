@@ -3,7 +3,7 @@
 import { TbShoppingCartPlus } from 'react-icons/tb';
 import { tv } from 'tailwind-variants';
 
-import { RecipeHeader } from '@/app/(defaultLayout)/mypage/_components/edit-header';
+import { EditHeader } from '@/app/(defaultLayout)/mypage/_components/edit-header';
 import { EditMenu } from '@/app/(defaultLayout)/mypage/_components/edit-menu';
 import { SubText } from '@/app/(defaultLayout)/mypage/_components/sub-text';
 import { ActionButton } from '@/app/_components/action-button';
@@ -44,7 +44,7 @@ export default function Ingredients({
 
   return (
     <main className={base()}>
-      <RecipeHeader />
+      <EditHeader />
       <div className='flex items-start justify-between gap-1 self-stretch'>
         <p className='text-2xl font-bold text-mauve-12'>
           グラタングラタングラタングラタングラタン

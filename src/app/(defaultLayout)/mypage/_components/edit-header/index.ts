@@ -1,1 +1,1 @@
-export { RecipeHeader } from './recipe-header';
+export { EditHeader } from './edit-header';
